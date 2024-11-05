@@ -1,265 +1,229 @@
 ---
-redirect_from:
-- "/devSpecs/ChemicalSubstance/specification/"
-- "/devSpecs/ChemicalSubstance/specification"
-- "/devSpecs/ChemicalSubstance/"
-- "/devSpecs/ChemicalSubstance"
-- "/specifications/ChemicalSubstance/"
-- "/specifications/ChemicalSubstance"
-- "/profiles/ChemicalSubstance/"
-- "/profiles/ChemicalSubstance"
-
-name: ChemicalSubstance
-
-previous_version: '0.3-DRAFT-2019_11_11'
-previous_release:
-
-status: release
-spec_type: Profile
-group: chemicals
-use_cases_url: '/useCases/Chemistry'
-cross_walk_url: 'https://docs.google.com/spreadsheets/d/1rf-tiNFfRq-Sjt_gbnyK_rs1ofcVOqdHDh9Wp-RdiRI/edit#gid=1483018794'
-gh_tasks: https://github.com/Bioschemas/bioschemas/labels/type%3A%20Chemistry
-live_deploy: /liveDeploys
-
-parent_type: Thing
-hierarchy:
-- Thing
-- BioChemEntity
-- ChemicalSubstance
-
 # spec_info content generated using GOWeb
 # DO NOT MANUALLY EDIT THE CONTENT
-spec_info:
-  title: ChemicalSubstance
-  subtitle: Bioschemas profile describing a ChemicalEntity
-  description: 'This profile describes a ChemicalSubstance which is ''a portion of
-    matter of constant composition, composed of molecular entities of the same type
-    or of different types'' (source: <a href=''https://www.ebi.ac.uk/chebi/searchId.do?chebiId=59999''>ChEBI:59999</a>).
-    <h4>Summary of Changes</h4>
-    This is the first release of the ChemicalSubstance profile. There are no changes from the previous draft.
-    '
-  version: 0.4-RELEASE
-  version_date: 20200407T114823
-  official_type: ""
-  full_example: https://github.com/Bioschemas/specifications/tree/master/ChemicalSubstance/examples
+cross_walk_url: https://docs.google.com/spreadsheets/d/1ZuJHrUwpkWACAt0De6OXhlWZ9pSRTJ1m9H954i8-FvQ/edit?ts=5bebfe78&pli=1#gid=1261485211https://docs.google.com/spreadsheets/d/1-E7IbF6Fe2uMyTpWMvthci8Lx58kXxlcz8BiXLmJTdk
+dde_ui_url: https://discovery.biothings.io/view/bioschemas/bioschemas:ChemicalSubstance
+gh_tasks: https://github.com/Bioschemas/specifications/labels/type%3A%20ChemicalSubstance
+group: chemicals
+hierarchy: []
+json-ld_url: ChemicalSubstance/jsonld/ChemicalSubstance_v0.4-RELEASE.json
+live_deploy: /liveDeploys
 mapping:
-- property: alternateName
-  expected_types:
-  - Text
-  description: An alias for the item.
-  type: ""
-  type_url: ""
-  bsc_description: ""
-  marginality: Optional
-  cardinality: MANY
-  controlled_vocab: ""
-  example: |-
-    "alternateName": [
-        "SiO2"
-    ]
-- property: bioChemInteraction
-  expected_types:
-  - BioChemEntity
-  description: A BioChemEntity that is known to interact with this item.
-  type: bioschemas
-  type_url: ""
-  bsc_description: Interaction of the molecular entity with other BioChemical entities.
-  marginality: Optional
-  cardinality: MANY
-  controlled_vocab: ""
-  example: ""
-- property: bioChemSimilarity
-  expected_types:
-  - BioChemEntity
-  description: A similar BioChemEntity, e.g., obtained by fingerprint similarity algorithms.
-  type: bioschemas
-  type_url: ""
-  bsc_description: ""
-  marginality: Optional
-  cardinality: MANY
-  controlled_vocab: ""
-  example: ""
-- property: biologicalRole
-  expected_types:
-  - DefinedTerm
-  description: A role played by the BioChemEntity within a biological context.
-  type: bioschemas
-  type_url: ""
-  bsc_description: ""
-  marginality: Optional
-  cardinality: MANY
-  controlled_vocab: Any suitable ontology such as [ChEBI biological role](https://www.ebi.ac.uk/ols/ontologies/chebi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FCHEBI_24432)
-  example: ""
-- property: chemicalComposition
-  expected_types:
-  - Text
-  description: The chemical composition describes the identity and relative ratio
-    of the chemical elements that make up the substance.
-  type: bioschemas
-  type_url: ""
-  bsc_description: For substances this often cannot be accurately determined, an approximation
-    is acceptable.
-  marginality: Recommended
+- bsc_description: ''
   cardinality: ONE
-  controlled_vocab: ""
-  example: '"chemicalComposition": "SiO2"'
-- property: chemicalRole
-  expected_types:
-  - DefinedTerm
-  description: A role played by the BioChemEntity within a chemical context.
-  type: bioschemas
-  type_url: ""
-  bsc_description: A role played by the molecular entity within a chemical context.
-  marginality: Optional
-  cardinality: MANY
-  controlled_vocab: Any suitable ontology such as [ChEBI Chemical Role](https://www.ebi.ac.uk/ols/ontologies/chebi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FCHEBI_51086)
-  example: |-
-    "chemicalRole": [{
-        "@type": "DefinedTerm",
-        "@id": "http://purl.bioontology.org/ontology/npo#NPO_1909",
-        "inDefinedTermSet": {
-            "@type": "DefinedTermSet",
-            "@id": "https://github.com/enanomapper/ontologies/blob/master/enanomapper.owl",
-            "name": "eNanoMapper ontology"
-        },
-        "termCode": "NPO_1909",
-        "name": "engineered nanomaterial",
-        "url": "http://bioportal.bioontology.org/ontologies/ENM/?p=classes&conceptid=http%3A%2F%2Fpurl.bioontology.org%2Fontology%2Fnpo%23NPO_1909"
-    }]
-- property: description
+  controlled_vocab: ''
+  description: The name of the item.
+  example: ''
   expected_types:
   - Text
-  description: A description of the item.
-  type: ""
-  type_url: ""
-  bsc_description: ""
-  marginality: Optional
+  marginality: Minimum
+  property: name
+  type: ''
+  type_url: ''
+- bsc_description: ''
   cardinality: ONE
-  controlled_vocab: ""
-  example: ""
-- property: disambiguatingDescription
-  expected_types:
-  - Text
-  description: A sub property of description. A short description of the item used
-    to disambiguate from other, similar items. Information from other properties (in
-    particular, name) may be necessary for the description to be useful for disambiguation.
-  type: ""
-  type_url: ""
-  bsc_description: ""
-  marginality: Optional
-  cardinality: ONE
-  controlled_vocab: ""
-  example: ""
-- property: hasBioChemEntityPart
-  expected_types:
-  - BioChemEntity
-  description: |-
-    Indicates a BioChemEntity that (in some sense) has this BioChemEntity as a part.
-    Inverse property:isPartOfBioChemEntity.
-  type: bioschemas
-  type_url: ""
-  bsc_description: ""
-  marginality: Recommended
-  cardinality: MANY
-  controlled_vocab: ""
-  example: |-
-    "hasBioChemEntityPart": [{
-        "@type": "BioChemEntity",
-        "identifier": "CHEBI:30563",
-        "name": "silicon dioxide",
-        "url": "https://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:30563"
-    }]
-- property: identifier
+  controlled_vocab: ''
+  description: The identifier property represents any kind of identifier for any kind
+    of <a class="localLink" href="http://schema.org/Thing">Thing</a>, such as ISBNs,
+    GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing
+    many of these, either as textual strings or as URL (URI) links. See <a href="/docs/datamodel.html#identifierBg">background
+    notes</a> for more details.
+  example: ''
   expected_types:
   - PropertyValue
   - Text
   - URL
-  description: The identifier property represents any kind of identifier for any kind
-    ofThing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties
-    for representing many of these, either as textual strings or as URL (URI) links.
-    See [background notes](http://schema.org/docs/datamodel.html#identifierBg) for more details.
-  type: ""
-  type_url: ""
-  bsc_description: ""
   marginality: Minimum
-  cardinality: ONE
-  controlled_vocab: ""
-  example: '"identifier": "https://data.enanomapper.net/substance/NWKI-e624f68e-2e00-30e4-b4bb-9e34383580cb/study"'
-- property: image
-  expected_types:
-  - ImageObject
-  - URL
-  description: An image of the item. This can be a URL or a fully described ImageObject.
-  type: ""
-  type_url: ""
-  bsc_description: ""
-  marginality: Optional
+  property: identifier
+  type: ''
+  type_url: ''
+- bsc_description: ''
   cardinality: MANY
-  controlled_vocab: ""
-  example: ""
-- property: name
+  controlled_vocab: ''
+  description: URL of the item.
+  example: ''
+  expected_types:
+  - URL
+  marginality: Minimum
+  property: url
+  type: ''
+  type_url: ''
+- bsc_description: ''
+  cardinality: ONE
+  controlled_vocab: ''
+  description: The chemical composition describes the identity and relative ratio
+    of the chemical elements that make up the substance. For substances this often
+    cannot be accurately determined, an approximation is acceptable.
+  example: ''
   expected_types:
   - Text
-  description: The name of the item.
-  type: ""
-  type_url: ""
-  bsc_description: ""
-  marginality: Minimum
-  cardinality: ONE
-  controlled_vocab: ""
-  example: '"name": "JRCNM10404",'
-- property: potentialUse
+  marginality: Recommended
+  property: chemicalComposition
+  type: ''
+  type_url: ''
+- bsc_description: ''
+  cardinality: MANY
+  controlled_vocab: ''
+  description: 'Indicates a BioChemEntity that (in some sense) has this BioChemEntity
+    as a part. Inverse property: isPartOfBioChemEntity'
+  example: ''
+  expected_types:
+  - BioChemEntity
+  marginality: Recommended
+  property: hasBioChemEntityPart
+  type: ''
+  type_url: ''
+- bsc_description: ''
+  cardinality: MANY
+  controlled_vocab: ''
+  description: An alias for the item.
+  example: ''
+  expected_types:
+  - Text
+  marginality: Optional
+  property: alternateName
+  type: ''
+  type_url: ''
+- bsc_description: ''
+  cardinality: MANY
+  controlled_vocab: ''
+  description: A BioChemEntity that is know to interact with this item.
+  example: ''
+  expected_types:
+  - BioChemEntity
+  marginality: Optional
+  property: bioChemInteraction
+  type: ''
+  type_url: ''
+- bsc_description: ''
+  cardinality: MANY
+  controlled_vocab: ''
+  description: A similar molecular entity, e.g., obtained by fingerprint similarity
+    algorithm.
+  example: ''
+  expected_types:
+  - BioChemEntity
+  marginality: Optional
+  property: bioChemSimilarity
+  type: ''
+  type_url: ''
+- bsc_description: ''
+  cardinality: MANY
+  controlled_vocab: ''
+  description: A role played by the molecular entity within a biological context.
+  example: ''
   expected_types:
   - DefinedTerm
-  description: Intended use of the BioChemEntity by humans.
-  type: bioschemas
-  type_url: ""
-  bsc_description: ""
   marginality: Optional
+  property: biologicalRole
+  type: ''
+  type_url: ''
+- bsc_description: ''
   cardinality: MANY
-  controlled_vocab: Any suitable ontology such as  [ChEBI Application](https://www.ebi.ac.uk/ols/ontologies/chebi/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FCHEBI_33232)
-  example: |-
-    "potentialUse": [{
-            "@type": "DefinedTerm",
-            "@id": "http://purl.obolibrary.org/obo/CHEBI_23888",
-            "inDefinedTermSet": "ftp://ftp.ebi.ac.uk/pub/databases/chebi/ontology/chebi.owl",
-            "termCode": "CHEBI:23888",
-            "name": "drug",
-            "url": "https://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:23888"
-        },
-        {
-            "@type": "DefinedTerm",
-            "@id": "http://purl.enanomapper.org/onto/ENM_8000194",
-            "inDefinedTermSet": "http://purl.enanomapper.net/onto/enanomapper.owl",
-            "termCode": "ENM_8000194",
-            "name": "food flavouring and nutrient",
-            "url": "https://www.ebi.ac.uk/ols/ontologies/enm/terms?iri=http%3A%2F%2Fpurl.enanomapper.org%2Fonto%2FENM_8000194"
-        }
-    ]
-- property: sameAs
+  controlled_vocab: ''
+  description: A role played by the BioChemEntity or molecular entity within a chemical
+    context.
+  example: ''
+  expected_types:
+  - DefinedTerm
+  marginality: Optional
+  property: chemicalRole
+  type: ''
+  type_url: ''
+- bsc_description: ''
+  cardinality: ONE
+  controlled_vocab: ''
+  description: A description of the item.
+  example: ''
+  expected_types:
+  - Text
+  marginality: Optional
+  property: description
+  type: ''
+  type_url: ''
+- bsc_description: ''
+  cardinality: ONE
+  controlled_vocab: ''
+  description: A sub property of description. A short description of the item used
+    to disambiguate from other, similar items. Information from other properties (in
+    particular, name) may be necessary for the description to be useful for disambiguation.
+  example: ''
+  expected_types:
+  - Text
+  marginality: Optional
+  property: disambiguatingDescription
+  type: ''
+  type_url: ''
+- bsc_description: ''
+  cardinality: MANY
+  controlled_vocab: ''
+  description: An image of the item. This can be a <a class="localLink" href="http://schema.org/URL">URL</a>
+    or a fully described <a class="localLink" href="http://schema.org/ImageObject">ImageObject</a>.
+  example: ''
   expected_types:
   - URL
+  marginality: Optional
+  property: image
+  type: ''
+  type_url: ''
+- bsc_description: ''
+  cardinality: MANY
+  controlled_vocab: ''
+  description: Intended use of the BioChemEntity by humans.
+  example: ''
+  expected_types:
+  - DefinedTerm
+  marginality: Optional
+  property: potentialUse
+  type: ''
+  type_url: ''
+- bsc_description: ''
+  cardinality: MANY
+  controlled_vocab: ''
   description: URL of a reference Web page that unambiguously indicates the item's
     identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official
     website.
-  type: ""
-  type_url: ""
-  bsc_description: ""
-  marginality: Optional
-  cardinality: MANY
-  controlled_vocab: ""
-  example: '"sameAs": "https://www.wikidata.org/wiki/Q58630711"'
-- property: url
+  example: ''
   expected_types:
   - URL
-  description: URL of the item.
-  type: ""
-  type_url: ""
-  bsc_description: ""
-  marginality: Minimum
-  cardinality: MANY
-  controlled_vocab: ""
-  example: '"url": "https://data.enanomapper.net/substance/NWKI-e624f68e-2e00-30e4-b4bb-9e34383580cb/study"'
+  marginality: Optional
+  property: sameAs
+  type: ''
+  type_url: ''
+name: ChemicalSubstance
+parent_type: ChemicalSubstance
+previous_release: ''
+previous_version: ''
+redirect_from: '- "/devSpecs/ChemicalSubstance/specification/"
 
+  - "/devSpecs/ChemicalSubstance/specification"
+
+  - "/devSpecs/ChemicalSubstance/"
+
+  - "/devSpecs/ChemicalSubstance"
+
+  - "/specifications/drafts/ChemicalSubstance/"
+
+  - "/specifications/drafts/ChemicalSubstance"
+
+  - "/specifications/ChemicalSubstance/"
+
+  - "/specifications/ChemicalSubstance"
+
+  - "/profiles/ChemicalSubstance/"
+
+  - "/profiles/ChemicalSubstance"'
+spec_info:
+  description: 'This profile describes a ChemicalSubstance which is ''a portion of
+    matter of constant composition, composed of molecular entities of the same type
+    or of different types'' (source: ChEBI:59999). Note, the parent class for this
+    profile has been updated to a pending class in schema.org.'
+  full_example: https://github.com/BioSchemas/specifications/tree/master/ChemicalSubstance/examples
+  official_type: ChemicalSubstance
+  title: ChemicalSubstance
+  version: 0.4-RELEASE
+  version_date: 20241105T104752
+spec_type: Profile
+status: deprecated
+use_cases_url: /useCases/ChemicalSubstance
 ---
