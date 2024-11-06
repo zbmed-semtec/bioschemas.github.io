@@ -6,7 +6,7 @@ Beacon:
   status: deprecated
 BioSample:
   latest_publication: 0.1-DRAFT-2019_11_12
-  latest_release: null
+  latest_release: 0.1-RELEASE
   name: BioSample
   status: active
 ChemicalSubstance:
