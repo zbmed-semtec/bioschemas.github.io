@@ -9,6 +9,172 @@
         [
             [
                 {
+                    "@id": "bioschemas:BioSample",
+                    "@type": "rdfs:Class",
+                    "rdfs:comment": "A biological material entity that is representative of a whole.\nComments: Typically samples are intended to be representative of the whole or aspects thereof. Examples of samples include biomedical samples (blood, urine) and plant specimens held at herbaria. Version 0.1-RELEASE. Note, the parent class for this schema has been updated to a pending class in schema.org.",
+                    "rdfs:label": "BioSample",
+                    "schema:additionalType": "https://bioschemas.org/types#nav-release",
+                    "schema:schemaVersion": "0.1-RELEASE",
+                    "rdfs:subClassOf": {
+                        "@id": "schema:BioChemEntity"
+                    }
+                },
+                {
+                    "@id": "bioschemas:additionalProperty",
+                    "@type": "rdf:Property",
+                    "rdfs:comment": "A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org. Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.",
+                    "rdfs:label": "additionalProperty",
+                    "schema:sameAs": {
+                        "@id": "schema:additionalProperty"
+                    },
+                    "schema:domainIncludes": {
+                        "@id": "bioschemas:BioSample"
+                    },
+                    "schema:rangeIncludes": [
+                        {
+                            "@id": "schema:PropertyValue"
+                        }
+                    ]
+                },
+                {
+                    "@id": "bioschemas:collector",
+                    "@type": "rdf:Property",
+                    "rdfs:comment": "The Person or Organization who collected the Sample. ",
+                    "rdfs:label": "collector",
+                    "schema:domainIncludes": {
+                        "@id": "bioschemas:BioSample"
+                    },
+                    "schema:rangeIncludes": [
+                        {
+                            "@id": "schema:Organization"
+                        },
+                        {
+                            "@id": "schema:Person"
+                        }
+                    ]
+                },
+                {
+                    "@id": "bioschemas:custodian",
+                    "@type": "rdf:Property",
+                    "rdfs:comment": "The Person or Organization who is responsible for the Sample.",
+                    "rdfs:label": "custodian",
+                    "schema:domainIncludes": {
+                        "@id": "bioschemas:BioSample"
+                    },
+                    "schema:rangeIncludes": [
+                        {
+                            "@id": "schema:Organization"
+                        },
+                        {
+                            "@id": "schema:Person"
+                        }
+                    ]
+                },
+                {
+                    "@id": "bioschemas:dateCreated",
+                    "@type": "rdf:Property",
+                    "rdfs:comment": "The date on which the CreativeWork was created or the item was added to a DataFeed. ",
+                    "rdfs:label": "dateCreated",
+                    "schema:sameAs": {
+                        "@id": "schema:dateCreated"
+                    },
+                    "schema:domainIncludes": {
+                        "@id": "bioschemas:BioSample"
+                    },
+                    "schema:rangeIncludes": [
+                        {
+                            "@id": "schema:Date"
+                        }
+                    ]
+                },
+                {
+                    "@id": "bioschemas:gender",
+                    "@type": "rdf:Property",
+                    "rdfs:comment": "Gender of the person. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender",
+                    "rdfs:label": "gender",
+                    "schema:sameAs": {
+                        "@id": "schema:gender"
+                    },
+                    "schema:domainIncludes": {
+                        "@id": "bioschemas:BioSample"
+                    },
+                    "schema:rangeIncludes": [
+                        {
+                            "@id": "schema:Text"
+                        },
+                        {
+                            "@id": "schema:GenderType"
+                        }
+                    ]
+                },
+                {
+                    "@id": "bioschemas:isControl",
+                    "@type": "rdf:Property",
+                    "rdfs:comment": "Indicates whether the sample is being used as a normal control, may be in combination with another sample.",
+                    "rdfs:label": "isControl",
+                    "schema:domainIncludes": {
+                        "@id": "bioschemas:BioSample"
+                    },
+                    "schema:rangeIncludes": [
+                        {
+                            "@id": "schema:Boolean"
+                        }
+                    ]
+                },
+                {
+                    "@id": "bioschemas:itemLocation",
+                    "@type": "rdf:Property",
+                    "rdfs:comment": "Current location of the item. ",
+                    "rdfs:label": "itemLocation",
+                    "schema:domainIncludes": {
+                        "@id": "bioschemas:BioSample"
+                    },
+                    "schema:rangeIncludes": [
+                        {
+                            "@id": "schema:Place"
+                        },
+                        {
+                            "@id": "schema:PostalAddress"
+                        },
+                        {
+                            "@id": "schema:Text"
+                        }
+                    ]
+                },
+                {
+                    "@id": "bioschemas:locationCreated",
+                    "@type": "rdf:Property",
+                    "rdfs:comment": "The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork. ",
+                    "rdfs:label": "locationCreated",
+                    "schema:sameAs": {
+                        "@id": "schema:locationCreated"
+                    },
+                    "schema:domainIncludes": {
+                        "@id": "bioschemas:BioSample"
+                    },
+                    "schema:rangeIncludes": [
+                        {
+                            "@id": "schema:Place"
+                        }
+                    ]
+                },
+                {
+                    "@id": "bioschemas:samplingAge",
+                    "@type": "rdf:Property",
+                    "rdfs:comment": "The age of the object when the Sample was created. ",
+                    "rdfs:label": "samplingAge",
+                    "schema:domainIncludes": {
+                        "@id": "bioschemas:BioSample"
+                    },
+                    "schema:rangeIncludes": [
+                        {
+                            "@id": "schema:Integer"
+                        }
+                    ]
+                }
+            ],
+            [
+                {
                     "@id": "bioschemas:BioChemEntity",
                     "@type": "rdfs:Class",
                     "rdfs:comment": "Any biological, chemical, or biochemical thing. For example: a protein; a gene; a chemical; a synthetic chemical. Note, this version (0.7-RELEASE) is the version that is currently pending on schema.org",
@@ -223,166 +389,131 @@
             ],
             [
                 {
-                    "@id": "bioschemas:BioSample",
+                    "@id": "bioschemastypes:ComputationalWorkflow",
                     "@type": "rdfs:Class",
-                    "rdfs:comment": "A biological material entity that is representative of a whole.\nComments: Typically samples are intended to be representative of the whole or aspects thereof. Examples of samples include biomedical samples (blood, urine) and plant specimens held at herbaria. Version 0.1-RELEASE. Note, the parent class for this schema has been updated to a pending class in schema.org.",
-                    "rdfs:label": "BioSample",
-                    "schema:additionalType": "https://bioschemas.org/types#nav-release",
-                    "schema:schemaVersion": "0.1-RELEASE",
+                    "rdfs:comment": "A computational workflow consists of an orchestrated and repeatable pattern of activity enabled by the systematic organization of resources into processes that transform materials, provide services, or process information (source Wikipedia.org). It is executed by a computational process and is thus distinct from laboratory or business workflows. version 1.0-RELEASE",
+                    "schema:schemaVersion": [
+                        "https://bioschemas.org/types/ComputationalWorkflow/1.0-RELEASE"
+                    ],
+                    "rdfs:label": "ComputationalWorkflow",
                     "rdfs:subClassOf": {
-                        "@id": "schema:BioChemEntity"
+                        "@id": "schema:SoftwareSourceCode"
                     }
                 },
                 {
-                    "@id": "bioschemas:additionalProperty",
+                    "@id": "bioschemastypes:input",
                     "@type": "rdf:Property",
-                    "rdfs:comment": "A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org. Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.",
-                    "rdfs:label": "additionalProperty",
+                    "rdfs:comment": "An input required to use the computational workflow (eg. Excel spreadsheet, BAM file)",
+                    "rdfs:label": "input",
+                    "schema:domainIncludes": {
+                        "@id": "bioschemastypes:ComputationalWorkflow"
+                    },
+                    "schema:rangeIncludes": [
+                        {
+                            "@id": "bioschemastypes:FormalParameter"
+                        }
+                    ]
+                },
+                {
+                    "@id": "bioschemastypes:output",
+                    "@type": "rdf:Property",
+                    "rdfs:comment": "An output produced by the workflow",
+                    "rdfs:label": "output",
+                    "schema:domainIncludes": {
+                        "@id": "bioschemastypes:ComputationalWorkflow"
+                    },
+                    "schema:rangeIncludes": [
+                        {
+                            "@id": "bioschemastypes:FormalParameter"
+                        }
+                    ]
+                },
+                {
+                    "@id": "bioschemastypes:documentation",
+                    "@type": "rdf:Property",
+                    "rdfs:comment": "Documentation describing the ComputationalWorkflow and its use.",
+                    "rdfs:label": "documentation",
+                    "schema:domainIncludes": {
+                        "@id": "bioschemastypes:ComputationalWorkflow"
+                    },
+                    "schema:rangeIncludes": [
+                        {
+                            "@id": "schema:CreativeWork"
+                        },
+                        {
+                            "@id": "schema:URL"
+                        }
+                    ]
+                },
+                {
+                    "@id": "bioschemastypes:funding",
+                    "@type": "rdf:Property",
+                    "rdfs:comment": "The funding for the workflow",
+                    "rdfs:label": "funding",
                     "schema:sameAs": {
-                        "@id": "schema:additionalProperty"
+                        "@id": "schema:funding"
                     },
                     "schema:domainIncludes": {
-                        "@id": "bioschemas:BioSample"
+                        "@id": "bioschemastypes:ComputationalWorkflow"
+                    },
+                    "schema:rangeIncludes": [
+                        {
+                            "@id": "schema:Grant"
+                        }
+                    ]
+                },
+                {
+                    "@id": "bioschemastypes:softwareRequirements",
+                    "@type": "rdf:Property",
+                    "rdfs:comment": "Renaming schema.org/requirements as softwareRequirements. Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime). Supersedes requirements. ",
+                    "rdfs:label": "softwareRequirements",
+                    "schema:sameAs": {
+                        "@id": "schema:softwareRequirements"
+                    },
+                    "schema:domainIncludes": {
+                        "@id": "bioschemastypes:ComputationalWorkflow"
+                    },
+                    "schema:rangeIncludes": [
+                        {
+                            "@id": "schema:Text"
+                        },
+                        {
+                            "@id": "schema:URL"
+                        }
+                    ]
+                }
+            ],
+            [
+                {
+                    "@id": "bioschemastypes:TaxonName",
+                    "@type": "rdfs:Class",
+                    "rdfs:comment": "A name of a biological taxon, may it be valid (zoology) / accepted (botany) or not. Version: 1.0-RELEASE",
+                    "schema:schemaVersion": [
+                        "https://bioschemas.org/types/TaxonName/1.0-RELEASE",
+                        "https://github.com/schemaorg/schemaorg/tree/main/data/releases/15.0/"
+                    ],
+                    "rdfs:label": "TaxonName",
+                    "rdfs:subClassOf": {
+                        "@id": "schema:CreativeWork"
+                    }
+                },
+                {
+                    "@id": "bioschemastypes:taxonRank",
+                    "rdfs:comment": "The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary \u2013 (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs). ",
+                    "@type": "rdf:Property",
+                    "rdfs:label": "taxonRank",
+                    "schema:domainIncludes": {
+                        "@id": "bioschemastypes:TaxonName"
                     },
                     "schema:rangeIncludes": [
                         {
                             "@id": "schema:PropertyValue"
-                        }
-                    ]
-                },
-                {
-                    "@id": "bioschemas:collector",
-                    "@type": "rdf:Property",
-                    "rdfs:comment": "The Person or Organization who collected the Sample. ",
-                    "rdfs:label": "collector",
-                    "schema:domainIncludes": {
-                        "@id": "bioschemas:BioSample"
-                    },
-                    "schema:rangeIncludes": [
-                        {
-                            "@id": "schema:Organization"
-                        },
-                        {
-                            "@id": "schema:Person"
-                        }
-                    ]
-                },
-                {
-                    "@id": "bioschemas:custodian",
-                    "@type": "rdf:Property",
-                    "rdfs:comment": "The Person or Organization who is responsible for the Sample.",
-                    "rdfs:label": "custodian",
-                    "schema:domainIncludes": {
-                        "@id": "bioschemas:BioSample"
-                    },
-                    "schema:rangeIncludes": [
-                        {
-                            "@id": "schema:Organization"
-                        },
-                        {
-                            "@id": "schema:Person"
-                        }
-                    ]
-                },
-                {
-                    "@id": "bioschemas:dateCreated",
-                    "@type": "rdf:Property",
-                    "rdfs:comment": "The date on which the CreativeWork was created or the item was added to a DataFeed. ",
-                    "rdfs:label": "dateCreated",
-                    "schema:sameAs": {
-                        "@id": "schema:dateCreated"
-                    },
-                    "schema:domainIncludes": {
-                        "@id": "bioschemas:BioSample"
-                    },
-                    "schema:rangeIncludes": [
-                        {
-                            "@id": "schema:Date"
-                        }
-                    ]
-                },
-                {
-                    "@id": "bioschemas:gender",
-                    "@type": "rdf:Property",
-                    "rdfs:comment": "Gender of the person. While http://schema.org/Male and http://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender",
-                    "rdfs:label": "gender",
-                    "schema:sameAs": {
-                        "@id": "schema:gender"
-                    },
-                    "schema:domainIncludes": {
-                        "@id": "bioschemas:BioSample"
-                    },
-                    "schema:rangeIncludes": [
-                        {
-                            "@id": "schema:Text"
-                        },
-                        {
-                            "@id": "schema:GenderType"
-                        }
-                    ]
-                },
-                {
-                    "@id": "bioschemas:isControl",
-                    "@type": "rdf:Property",
-                    "rdfs:comment": "Indicates whether the sample is being used as a normal control, may be in combination with another sample.",
-                    "rdfs:label": "isControl",
-                    "schema:domainIncludes": {
-                        "@id": "bioschemas:BioSample"
-                    },
-                    "schema:rangeIncludes": [
-                        {
-                            "@id": "schema:Boolean"
-                        }
-                    ]
-                },
-                {
-                    "@id": "bioschemas:itemLocation",
-                    "@type": "rdf:Property",
-                    "rdfs:comment": "Current location of the item. ",
-                    "rdfs:label": "itemLocation",
-                    "schema:domainIncludes": {
-                        "@id": "bioschemas:BioSample"
-                    },
-                    "schema:rangeIncludes": [
-                        {
-                            "@id": "schema:Place"
-                        },
-                        {
-                            "@id": "schema:PostalAddress"
                         },
                         {
                             "@id": "schema:Text"
-                        }
-                    ]
-                },
-                {
-                    "@id": "bioschemas:locationCreated",
-                    "@type": "rdf:Property",
-                    "rdfs:comment": "The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork. ",
-                    "rdfs:label": "locationCreated",
-                    "schema:sameAs": {
-                        "@id": "schema:locationCreated"
-                    },
-                    "schema:domainIncludes": {
-                        "@id": "bioschemas:BioSample"
-                    },
-                    "schema:rangeIncludes": [
+                        },
                         {
-                            "@id": "schema:Place"
-                        }
-                    ]
-                },
-                {
-                    "@id": "bioschemas:samplingAge",
-                    "@type": "rdf:Property",
-                    "rdfs:comment": "The age of the object when the Sample was created. ",
-                    "rdfs:label": "samplingAge",
-                    "schema:domainIncludes": {
-                        "@id": "bioschemas:BioSample"
-                    },
-                    "schema:rangeIncludes": [
-                        {
-                            "@id": "schema:Integer"
+                            "@id": "schema:URL"
                         }
                     ]
                 }
@@ -494,137 +625,6 @@
                         {
                             "@id": "bioschemastypes:TaxonName"
                         },
-                        {
-                            "@id": "schema:Text"
-                        },
-                        {
-                            "@id": "schema:URL"
-                        }
-                    ]
-                }
-            ],
-            [
-                {
-                    "@id": "bioschemastypes:TaxonName",
-                    "@type": "rdfs:Class",
-                    "rdfs:comment": "A name of a biological taxon, may it be valid (zoology) / accepted (botany) or not. Version: 1.0-RELEASE",
-                    "schema:schemaVersion": [
-                        "https://bioschemas.org/types/TaxonName/1.0-RELEASE",
-                        "https://github.com/schemaorg/schemaorg/tree/main/data/releases/15.0/"
-                    ],
-                    "rdfs:label": "TaxonName",
-                    "rdfs:subClassOf": {
-                        "@id": "schema:CreativeWork"
-                    }
-                },
-                {
-                    "@id": "bioschemastypes:taxonRank",
-                    "rdfs:comment": "The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary \u2013 (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs). ",
-                    "@type": "rdf:Property",
-                    "rdfs:label": "taxonRank",
-                    "schema:domainIncludes": {
-                        "@id": "bioschemastypes:TaxonName"
-                    },
-                    "schema:rangeIncludes": [
-                        {
-                            "@id": "schema:PropertyValue"
-                        },
-                        {
-                            "@id": "schema:Text"
-                        },
-                        {
-                            "@id": "schema:URL"
-                        }
-                    ]
-                }
-            ],
-            [
-                {
-                    "@id": "bioschemastypes:ComputationalWorkflow",
-                    "@type": "rdfs:Class",
-                    "rdfs:comment": "A computational workflow consists of an orchestrated and repeatable pattern of activity enabled by the systematic organization of resources into processes that transform materials, provide services, or process information (source Wikipedia.org). It is executed by a computational process and is thus distinct from laboratory or business workflows. version 1.0-RELEASE",
-                    "schema:schemaVersion": [
-                        "https://bioschemas.org/types/ComputationalWorkflow/1.0-RELEASE"
-                    ],
-                    "rdfs:label": "ComputationalWorkflow",
-                    "rdfs:subClassOf": {
-                        "@id": "schema:SoftwareSourceCode"
-                    }
-                },
-                {
-                    "@id": "bioschemastypes:input",
-                    "@type": "rdf:Property",
-                    "rdfs:comment": "An input required to use the computational workflow (eg. Excel spreadsheet, BAM file)",
-                    "rdfs:label": "input",
-                    "schema:domainIncludes": {
-                        "@id": "bioschemastypes:ComputationalWorkflow"
-                    },
-                    "schema:rangeIncludes": [
-                        {
-                            "@id": "bioschemastypes:FormalParameter"
-                        }
-                    ]
-                },
-                {
-                    "@id": "bioschemastypes:output",
-                    "@type": "rdf:Property",
-                    "rdfs:comment": "An output produced by the workflow",
-                    "rdfs:label": "output",
-                    "schema:domainIncludes": {
-                        "@id": "bioschemastypes:ComputationalWorkflow"
-                    },
-                    "schema:rangeIncludes": [
-                        {
-                            "@id": "bioschemastypes:FormalParameter"
-                        }
-                    ]
-                },
-                {
-                    "@id": "bioschemastypes:documentation",
-                    "@type": "rdf:Property",
-                    "rdfs:comment": "Documentation describing the ComputationalWorkflow and its use.",
-                    "rdfs:label": "documentation",
-                    "schema:domainIncludes": {
-                        "@id": "bioschemastypes:ComputationalWorkflow"
-                    },
-                    "schema:rangeIncludes": [
-                        {
-                            "@id": "schema:CreativeWork"
-                        },
-                        {
-                            "@id": "schema:URL"
-                        }
-                    ]
-                },
-                {
-                    "@id": "bioschemastypes:funding",
-                    "@type": "rdf:Property",
-                    "rdfs:comment": "The funding for the workflow",
-                    "rdfs:label": "funding",
-                    "schema:sameAs": {
-                        "@id": "schema:funding"
-                    },
-                    "schema:domainIncludes": {
-                        "@id": "bioschemastypes:ComputationalWorkflow"
-                    },
-                    "schema:rangeIncludes": [
-                        {
-                            "@id": "schema:Grant"
-                        }
-                    ]
-                },
-                {
-                    "@id": "bioschemastypes:softwareRequirements",
-                    "@type": "rdf:Property",
-                    "rdfs:comment": "Renaming schema.org/requirements as softwareRequirements. Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime). Supersedes requirements. ",
-                    "rdfs:label": "softwareRequirements",
-                    "schema:sameAs": {
-                        "@id": "schema:softwareRequirements"
-                    },
-                    "schema:domainIncludes": {
-                        "@id": "bioschemastypes:ComputationalWorkflow"
-                    },
-                    "schema:rangeIncludes": [
                         {
                             "@id": "schema:Text"
                         },
